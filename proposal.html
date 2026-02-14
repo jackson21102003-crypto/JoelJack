@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>My Proposal</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family: system-ui, Arial, sans-serif;
+}
+
+body{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#000;
+  overflow:hidden;
+}
+
+/* Animated romantic background */
+.bg{
+  position:fixed;
+  width:200%;
+  height:200%;
+  background:
+    radial-gradient(circle at 20% 30%, #ff4d6d, transparent 40%),
+    radial-gradient(circle at 80% 70%, #ff9a9e, transparent 40%),
+    radial-gradient(circle at 50% 50%, #ff758f, transparent 50%);
+  animation: float 12s infinite alternate;
+  z-index:-1;
+}
+
+@keyframes float{
+  from{transform:translate(0,0);}
+  to{transform:translate(-15%,-15%);}
+}
+
+/* Center box */
+.box{
+  background:rgba(255,255,255,.96);
+  width:min(95vw,800px);
+  max-height:90vh;
+  overflow-y:auto;
+  padding:clamp(18px,4vw,40px);
+  border-radius:22px;
+  text-align:center;
+  box-shadow:0 0 35px rgba(255,0,120,.5);
+  animation: pop 1s ease;
+}
+
+@keyframes pop{
+  from{transform:scale(.7);opacity:0}
+  to{transform:scale(1);opacity:1}
+}
+
+h1{
+  color:#ff2d55;
+  font-size:clamp(22px,6vw,36px);
+  margin-bottom:12px;
+}
+
+p{
+  font-size:clamp(15px,4.5vw,18px);
+  line-height:1.7;
+  margin-bottom:18px;
+}
+
+h2{
+  color:#ff2d55;
+  font-size:clamp(18px,5vw,26px);
+  margin-top:10px;
+}
+
+button{
+  margin-top:16px;
+  padding:clamp(10px,3vw,14px) clamp(24px,6vw,36px);
+  font-size:clamp(16px,5vw,20px);
+  border:none;
+  border-radius:40px;
+  background:#ff2d55;
+  color:#fff;
+  cursor:pointer;
+  transition:.3s;
+}
+
+button:hover{
+  transform:scale(1.08);
+  background:#ff4d6d;
+}
+
+/* Smooth mobile scroll */
+.box::-webkit-scrollbar{
+  width:6px;
+}
+.box::-webkit-scrollbar-thumb{
+  background:#ff758f;
+  border-radius:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<div class="box">
+<h1>❤️ Happy Valentine’s Day ❤️</h1>
+
+<p>
+Today is Valentine’s Day — a day to say I love you to someone special.  
+So I want to say my love to the girl who changed my life, who made me a better person, who always forgave me and chose me when I wasn’t good at anything.
+
+You make me laugh, cry, grow, and dream.  
+You support my future and my heart.
+
+That girl is my vaave Linsha ❤️  
+
+No matter how far we are today — I choose you yesterday, today, and forever.
+
+You are my everything.  
+You are my forever.
+</p>
+
+<h2>Will you be mine forever?</h2>
+
+<button onclick="window.location.href='ring.html'">Yes 💖</button>
+</div>
+
+</body>
+</html>

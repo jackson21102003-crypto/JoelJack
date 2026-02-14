@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Our Forever</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: system-ui, Arial, sans-serif;
+}
+
+body{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:radial-gradient(circle,#050014,#000);
+overflow:hidden;
+}
+
+/* floating hearts & stars */
+.effects span{
+position:absolute;
+bottom:-40px;
+animation: float 10s linear infinite;
+opacity:.9;
+}
+
+@keyframes float{
+from{transform:translateY(0);}
+to{transform:translateY(-120vh);}
+}
+
+.center{
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:14px;
+z-index:5;
+max-height:90vh;
+}
+
+/* ring */
+.ring{
+width:clamp(150px,40vw,280px);
+cursor:pointer;
+filter:drop-shadow(0 0 15px gold);
+animation:pulse 2s infinite alternate;
+}
+
+@keyframes pulse{
+from{transform:scale(1);}
+to{transform:scale(1.05);}
+}
+
+/* final image */
+.photo{
+max-height:60vh;   /* KEY FIX */
+width:auto;
+max-width:90vw;
+border-radius:20px;
+box-shadow:0 0 40px rgba(255,0,120,.8);
+display:none;
+object-fit:contain;
+}
+
+/* text */
+.love-text{
+color:white;
+font-size:clamp(18px,5vw,26px);
+text-shadow:0 0 10px pink;
+display:none;
+text-align:center;
+padding:0 10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="effects" id="effects"></div>
+
+<div class="center">
+
+<img src="./images/ring.png.webp" class="ring" id="ring" onclick="showLove()">
+
+<img src="./images/love.jpg.jpg" class="photo" id="photo">
+
+<div class="love-text" id="loveText">
+Happy Valentine’s Day Vaave ❤️
+</div>
+
+</div>
+
+<script>
+const effects=document.getElementById("effects");
+const icons=["❤️","✨","⭐","💖","🌟"];
+
+for(let i=0;i<40;i++){
+  let span=document.createElement("span");
+  span.innerHTML=icons[Math.floor(Math.random()*icons.length)];
+  span.style.left=Math.random()*100+"vw";
+  span.style.animationDelay=Math.random()*5+"s";
+  effects.appendChild(span);
+}
+
+function showLove(){
+  document.getElementById("ring").style.display="none";
+  document.getElementById("photo").style.display="block";
+  document.getElementById("loveText").style.display="block";
+}
+</script>
+
+</body>
+</html>
